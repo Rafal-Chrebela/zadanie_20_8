@@ -2,12 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(
-  "mongodb://Rafal:Trzyka_888@ds119160.mlab.com:19160/rasfael-1",
-  {
-    useMongoClient: true
-  }
-);
+mongoose.connect("mongodb://test:test123@ds119160.mlab.com:19160/rasfael-1");
 
 //new user Schema
 const userSchema = new Schema({
@@ -159,5 +154,5 @@ Promise.all([kenny.save(), mark.save(), benny.save()])
   .then(updateUsername)
   .then(findMarkAndDelete)
   .then(findKennyAndDelete)
-  .then(findBennyAndRemove)
+  // .then(findBennyAndRemove)
   .catch(console.log.bind(console));
